@@ -11,7 +11,7 @@ namespace Tyuiu.BarminaSK.Sprint6.Task5.V29.Test
             DataService ds = new DataService();
             double[] result = ds.LoadFromDataFile(@"C:\Users\makar\source\repos\Tyuiu.BarminaSK.Sprint6\Tyuiu.BarminaSK.Sprint6.Task5.V29\bin\Debug\net8.0-windows\InPutDataFileTask5V29.txt");
 
-            double[] expected = { 18, 18.17, 12, 11, 18 };
+            double[] expected = { 12, 12.89, 35, 13.83, 12.76 };
 
             for (int i = 0; i < expected.Length; i++)
             {

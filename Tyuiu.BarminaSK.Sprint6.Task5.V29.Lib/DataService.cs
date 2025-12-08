@@ -9,18 +9,29 @@ namespace Tyuiu.BarminaSK.Sprint6.Task5.V29.Lib
         public int len = 0;
         public double[] LoadFromDataFile(string path)
         {
-            string fileContent = File.ReadAllText(path);
-
-            string[] numbersStr = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' },
-                                                   StringSplitOptions.RemoveEmptyEntries);
-
-            double[] numsArray = new double[numbersStr.Length];
-            for (int i = 0; i < numbersStr.Length; i++)
+            using (StreamReader reader = new StreamReader(path))
             {
-                numsArray[i] = Convert.ToDouble(numbersStr[i], CultureInfo.InvariantCulture);
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    len++;
+                }
             }
 
-            numsArray = numsArray.Where(val => val > 10).Select(val => Math.Round(val, 3)).ToArray();
+            double[] numsArray = new double[len];
+
+            int index = 0;
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    numsArray[index] = Convert.ToDouble(line);
+                    index++;
+                }
+            }
+
+            numsArray = numsArray.Where(val => val > 10).ToArray();
 
             return numsArray;
         }
