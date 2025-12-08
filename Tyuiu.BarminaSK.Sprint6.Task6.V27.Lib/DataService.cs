@@ -14,7 +14,7 @@ namespace Tyuiu.BarminaSK.Sprint6.Task6.V27.Lib
                 string text = File.ReadAllText(path);
                 string result = "";
 
-                MatchCollection matches = Regex.Matches(text, @"\b[A-Za-z]*[Hh][A-Za-z]*\b");
+                MatchCollection matches = Regex.Matches(text, @"\b[A-Za-z]*[H][A-Za-z]*\b");
 
                 foreach (Match match in matches)
                 {

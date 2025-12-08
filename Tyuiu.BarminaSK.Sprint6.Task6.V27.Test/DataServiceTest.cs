@@ -14,7 +14,7 @@ namespace Tyuiu.BarminaSK.Sprint6.Task6.V27.Test
 
             string result = ds.CollectTextFromFile(path);
 
-            string expected = "UpGwjzkBH OHcr KgepHrKCHa FVUh XIpph hZznJL";
+            string expected = "UpGwjzkBH OHcr KgepHrKCHa";
 
             Assert.AreEqual(expected, result);
         }
